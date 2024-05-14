@@ -1,5 +1,5 @@
 
-streamlit==1.31.0
+
 Matplotlib==3.8.4
 tensorflow==2.16.1
 h5py==3.11.0

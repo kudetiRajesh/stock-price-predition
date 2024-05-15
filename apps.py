@@ -51,11 +51,34 @@ X,Y=sampling(df.to_list(),n_steps)
 
 
 model=load_model('bit.h5')
+
+
+plots=predicted=model.predict(X)
+st.subheader('perfomence of predicting')
+fig2=plt.figure(figsize=(12,6))
+plt.plot(Y)
+plt.plot(plots)
+st.pyplot(fig2)
+
+
+
 test=np.array(df.tail(10)).reshape(1,10)
 predicted=model.predict(test)
 
+
+
+
+test2=np.array(df[-12:-2]).reshape(1,10)
+predicted2=model.predict(test2)
+
 st.subheader("test values for next day")
 st.write(predicted[0])
+
+st.subheader("predicted values for today")
+st.write(predicted2[0])
+
+
+
 
 
 
